@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sofeware_pattern.iml" filepath="$PROJECT_DIR$/sofeware_pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SEER.iml" filepath="$PROJECT_DIR$/SEER.iml" />
     </modules>
   </component>
 </project>
