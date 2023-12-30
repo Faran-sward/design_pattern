@@ -10,7 +10,7 @@ public class SEER {
     private String SEERName;      //名字
     private Role SEERRole;      //角色
     private Color SEERColor;      //颜色
-    private double money;      //摩尔豆
+    private double money;      //赛尔豆
     private int ticket;      //游乐园票数
     private int score;      //游戏积分
     private Backpack backpack;//背包

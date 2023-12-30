@@ -75,8 +75,8 @@ public class SEERCreator {
             }
         }
 
-        SEERFactory moleFactory = new SEERFactory();
-        SEER seer = moleFactory.createSEER(role,color);
+        SEERFactory seerFactory = new SEERFactory();
+        SEER seer = seerFactory.createSEER(role,color);
         Backpack backpack=new Backpack();
 
         seer.setSEERName(name);
