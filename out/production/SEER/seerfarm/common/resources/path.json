@@ -1,0 +1,11 @@
+{
+  "IFactory": "seerfarm.pattern.abstractFactory.conc.",
+  "factory": {
+    "conc": {
+      "CropsFactory": "seerfarm.common.product.crops.",
+      "FertilizerFactory": "seerfarm.common.product.fertilizer.",
+      "SeedFactory": "seerfarm.common.product.seed.",
+      "ToolFactory": "seerfarm.common.product.tool."
+    }
+  }
+}
