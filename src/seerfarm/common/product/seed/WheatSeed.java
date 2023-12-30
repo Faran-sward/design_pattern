@@ -1,8 +1,8 @@
 package seerfarm.common.product.seed;
 
-import molefarm.common.product.AbstractSeed;
-import molefarm.common.status.product.Color;
-import molefarm.common.status.product.Size;
+import seerfarm.common.product.AbstractSeed;
+import seerfarm.common.status.product.Color;
+import seerfarm.common.status.product.Size;
 
 /**
  * 小麦种子

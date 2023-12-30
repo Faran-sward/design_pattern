@@ -1,6 +1,6 @@
 package seerfarm.common.product.tool;
 
-import molefarm.common.product.AbstractTool;
+import seerfarm.common.product.AbstractTool;
 
 public class Shovel extends AbstractTool {
     private final String name = "铲子";

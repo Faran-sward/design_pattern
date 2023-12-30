@@ -1,7 +1,7 @@
 package seerfarm.test.observer;
 
-import molefarm.pattern.adapter.conc.WeatherAdapter;
-import molefarm.pattern.observer.WeatherObserver;
+import seerfarm.pattern.adapter.conc.WeatherAdapter;
+import seerfarm.pattern.observer.WeatherObserver;
 
 public class ObserverTest {
     private static WeatherAdapter weatherAdapter;

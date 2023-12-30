@@ -1,7 +1,7 @@
 package seerfarm.common.product;
 
-import molefarm.common.status.product.Color;
-import molefarm.common.status.product.Size;
+import seerfarm.common.status.product.Color;
+import seerfarm.common.status.product.Size;
 
 import java.util.Objects;
 

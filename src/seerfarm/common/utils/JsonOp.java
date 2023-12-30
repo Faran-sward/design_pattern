@@ -3,7 +3,7 @@ package seerfarm.common.utils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONReader;
-import molefarm.common.status.other.ProductType;
+import seerfarm.common.status.other.ProductType;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -31,7 +31,7 @@ public class JsonOp {
 
     public static Map<String, String> searchMapper(String name) {
         try {
-            String jsonPath = commonPath + "molefarm/common/resources/mapper.json";
+            String jsonPath = commonPath + "seerfarm/common/resources/mapper.json";
             JSONObject json = getJson(jsonPath);
             JSONObject json1 = json.getJSONObject(name);
             String s = json1.toJSONString();
@@ -51,7 +51,7 @@ public class JsonOp {
      */
     public static List<String> SearchJson(ProductType productType) {
         String text = productType.getText();
-        String jsonPath = commonPath + "molefarm/common/resources/farm.json";
+        String jsonPath = commonPath + "seerfarm/common/resources/farm.json";
         List<String> list = null;
         try {
             JSONObject json = getJson(jsonPath);
@@ -72,7 +72,7 @@ public class JsonOp {
      * @return
      */
     public static String utilSearchJson(String name, String fileName, String... difference) {
-        String jsonPath = commonPath + "molefarm/common/resources/" + fileName + ".json";
+        String jsonPath = commonPath + "seerfarm/common/resources/" + fileName + ".json";
         int size = difference.length;
         try {
             JSONObject json = getJson(jsonPath);

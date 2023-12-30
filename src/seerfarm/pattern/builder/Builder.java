@@ -1,7 +1,7 @@
 package seerfarm.pattern.builder;
 
-import molefarm.common.MoleFarmBlock;
-import molefarm.common.product.AbstractSeed;
+import seerfarm.common.seerfarmBlock;
+import seerfarm.common.product.AbstractSeed;
 
 /**
  * 到时候在使用建造者模式的时候，分为一键种植（只是松土加种植），一键种植（加上浇水和施肥），一键收获
@@ -9,7 +9,7 @@ import molefarm.common.product.AbstractSeed;
  */
 public abstract class Builder {
 
-    protected MoleFarmBlock farmBlock;
+    protected seerfarmBlock farmBlock;
 
     /**
      * 种植一个具体的种子
@@ -18,11 +18,11 @@ public abstract class Builder {
      */
     public abstract void buildPlant(AbstractSeed seed);
 
-    public void setFarmBlock(MoleFarmBlock farmBlock) {
+    public void setFarmBlock(seerfarmBlock farmBlock) {
         this.farmBlock = farmBlock;
     }
 
-    public MoleFarmBlock getFarmBlock() {
+    public seerfarmBlock getFarmBlock() {
         return farmBlock;
     }
 }

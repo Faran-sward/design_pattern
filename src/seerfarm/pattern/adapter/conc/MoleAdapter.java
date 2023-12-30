@@ -1,63 +1,63 @@
 package seerfarm.pattern.adapter.conc;
 
 
-//import molefarm.pattern.adapter.Mole;
+//import seerfarm.pattern.adapter.SEER;
 
-import framework.simplefactory.Mole;
-import singletonlazyinitialization.MoleManor;
-import molefarm.common.MoleFarm;
-import molefarm.common.MoleFarmWarehouse;
-import molefarm.pattern.adapter.Target;
+import framework.simplefactory.SEER;
+import singletonlazyinitialization.seerManor;
+import seerfarm.common.seerfarm;
+import seerfarm.common.seerfarmWarehouse;
+import seerfarm.pattern.adapter.Target;
 
 /**
  * 摩尔角色适配器
- * 这里采用了单例模式(因为只有一个mole)
+ * 这里采用了单例模式(因为只有一个seer)
  * 因为框架端没有农场，也没有仓库，所以要用适配器
  */
-public class MoleAdapter extends Mole implements Target {
+public class seerAdapter extends SEER implements Target {
 
-    private static MoleAdapter moleAdapter=new MoleAdapter(MoleManor.getPlayer());
+    private static seerAdapter seerAdapter=new seerAdapter(seerManor.getPlayer());
 
-    //这个mole对象要从外界传进来的，因为这是适配器
-    private Mole mole;
+    //这个seer对象要从外界传进来的，因为这是适配器
+    private SEER SEER;
 
-    private MoleFarm moleFarm=MoleFarm.getInstance();
+    private seerfarm seerfarm=seerfarm.getInstance();
 
-    private MoleFarmWarehouse farmWarehouse;
+    private seerfarmWarehouse farmWarehouse;
 
-    private MoleAdapter(Mole mole){
-        this.mole=mole;
-        farmWarehouse=MoleFarmWarehouse.getInstance(mole);
+    private seerAdapter(SEER SEER){
+        this.SEER=SEER;
+        farmWarehouse=seerfarmWarehouse.getInstance(SEER);
     }
 
-    //返回mole适配器对象实例
-    public static MoleAdapter getInstance(){
-        return moleAdapter;
+    //返回seer适配器对象实例
+    public static seerAdapter getInstance(){
+        return seerAdapter;
     }
 
-    public static void setMoleAdapter(MoleAdapter moleAdapter) {
-        MoleAdapter.moleAdapter = moleAdapter;
-    }
-
-    @Override
-    public Double getMoleDou() {
-        return mole.getMoney();
+    public static void setseerAdapter(seerAdapter seerAdapter) {
+        seerAdapter.seerAdapter = seerAdapter;
     }
 
     @Override
-    public void setMoleDou(Double money) {
-        mole.setMoney(money);
+    public Double getseerDou() {
+        return SEER.getMoney();
     }
 
-    public Mole getMole() {
-        return mole;
+    @Override
+    public void setseerDou(Double money) {
+        SEER.setMoney(money);
     }
 
-    public MoleFarm getMoleFarm() {
-        return moleFarm;
+    public SEER getseer() {
+        return SEER;
     }
 
-    public MoleFarmWarehouse getFarmWarehouse() {
+    public seerfarm getseerfarm() {
+        return seerfarm;
+    }
+
+    public seerfarmWarehouse getFarmWarehouse() {
         return farmWarehouse;
     }
 }

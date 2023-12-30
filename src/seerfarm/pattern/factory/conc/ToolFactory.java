@@ -1,11 +1,11 @@
 package seerfarm.pattern.factory.conc;
 
-import molefarm.common.MoleFarmWarehouse;
-import molefarm.common.exception.product.conc.ToolNotFoundException;
-import molefarm.common.product.AbstractTool;
-import molefarm.common.utils.JsonOp;
-import molefarm.pattern.adapter.conc.MoleAdapter;
-import molefarm.pattern.factory.Factory;
+import seerfarm.common.seerfarmWarehouse;
+import seerfarm.common.exception.product.conc.ToolNotFoundException;
+import seerfarm.common.product.AbstractTool;
+import seerfarm.common.utils.JsonOp;
+import seerfarm.pattern.adapter.conc.seerAdapter;
+import seerfarm.pattern.factory.Factory;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
  * 工具的抽象工厂类，此处不再写具体的，如ConcreteFarmToolFactory
  */
 public class ToolFactory implements Factory {
-    private MoleAdapter mole=MoleAdapter.getInstance();
+    private seerAdapter SEER=seerAdapter.getInstance();
 
     private final static String PATH = JsonOp.getPathJson("ToolFactory");
 
@@ -35,9 +35,9 @@ public class ToolFactory implements Factory {
     @Override
     public AbstractTool create(String name) throws ToolNotFoundException {
         try {
-            Method method = MoleFarmWarehouse.class.getDeclaredMethod("get" + name);
-            final MoleFarmWarehouse moleFarmWarehouse = mole.getFarmWarehouse();
-            AbstractTool invoke = (AbstractTool) method.invoke(moleFarmWarehouse);
+            Method method = seerfarmWarehouse.class.getDeclaredMethod("get" + name);
+            final seerfarmWarehouse seerfarmWarehouse = SEER.getFarmWarehouse();
+            AbstractTool invoke = (AbstractTool) method.invoke(seerfarmWarehouse);
             return invoke;
         } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             throw new ToolNotFoundException(MSG);

@@ -5,9 +5,9 @@ package seerfarm.pattern.adapter;
  */
 public interface Target {
 
-    default Double getMoleDou(){return null;}
+    default Double getseerDou(){return null;}
 
-    default void setMoleDou(Double money){}
+    default void setseerDou(Double money){}
 
     default String getWeather() {return null;}
 }

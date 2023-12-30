@@ -1,10 +1,10 @@
 package seerfarm.pattern.factory.conc;
 
-import molefarm.common.exception.product.ProductNotFoundException;
-import molefarm.common.exception.product.conc.FertilizerNotFoundException;
-import molefarm.common.product.AbstractFertilizer;
-import molefarm.common.utils.JsonOp;
-import molefarm.pattern.factory.Factory;
+import seerfarm.common.exception.product.ProductNotFoundException;
+import seerfarm.common.exception.product.conc.FertilizerNotFoundException;
+import seerfarm.common.product.AbstractFertilizer;
+import seerfarm.common.utils.JsonOp;
+import seerfarm.pattern.factory.Factory;
 
 /**
  * 肥料的抽象工厂类，此处不再写具体的，如PrimaryFertilizerFactory

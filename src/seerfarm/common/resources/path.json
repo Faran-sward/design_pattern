@@ -1,11 +1,11 @@
 {
-  "IFactory": "molefarm.pattern.abstractFactory.conc.",
+  "IFactory": "seerfarm.pattern.abstractFactory.conc.",
   "factory": {
     "conc": {
-      "CropsFactory": "molefarm.common.product.crops.",
-      "FertilizerFactory": "molefarm.common.product.fertilizer.",
-      "SeedFactory": "molefarm.common.product.seed.",
-      "ToolFactory": "molefarm.common.product.tool."
+      "CropsFactory": "seerfarm.common.product.crops.",
+      "FertilizerFactory": "seerfarm.common.product.fertilizer.",
+      "SeedFactory": "seerfarm.common.product.seed.",
+      "ToolFactory": "seerfarm.common.product.tool."
     }
   }
 }

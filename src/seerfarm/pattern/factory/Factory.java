@@ -1,8 +1,8 @@
 package seerfarm.pattern.factory;
 
-import molefarm.common.exception.MyException;
-import molefarm.common.exception.product.ProductNotFoundException;
-import molefarm.common.product.IProduct;
+import seerfarm.common.exception.MyException;
+import seerfarm.common.exception.product.ProductNotFoundException;
+import seerfarm.common.product.IProduct;
 
 import java.lang.reflect.InvocationTargetException;
 

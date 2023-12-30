@@ -1,7 +1,7 @@
 package seerfarm.pattern.proxy;
 
-import molefarm.pattern.command.conc.FertilizerCommand;
-import molefarm.pattern.command.conc.SeedCommand;
+import seerfarm.pattern.command.conc.FertilizerCommand;
+import seerfarm.pattern.command.conc.SeedCommand;
 
 /**
  * 代理模式

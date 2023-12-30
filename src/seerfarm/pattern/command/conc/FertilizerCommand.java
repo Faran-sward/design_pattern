@@ -1,13 +1,13 @@
 package seerfarm.pattern.command.conc;
 
-import molefarm.Home;
-import molefarm.common.MoleFarmWarehouse;
-import molefarm.common.exception.product.conc.FertilizerNotFoundException;
-import molefarm.common.product.AbstractFertilizer;
-import molefarm.common.utils.JsonOp;
-import molefarm.pattern.adapter.conc.MoleAdapter;
-import molefarm.pattern.command.Command;
-import molefarm.pattern.factory.conc.FertilizerFactory;
+import seerfarm.Home;
+import seerfarm.common.seerfarmWarehouse;
+import seerfarm.common.exception.product.conc.FertilizerNotFoundException;
+import seerfarm.common.product.AbstractFertilizer;
+import seerfarm.common.utils.JsonOp;
+import seerfarm.pattern.adapter.conc.seerAdapter;
+import seerfarm.pattern.command.Command;
+import seerfarm.pattern.factory.conc.FertilizerFactory;
 
 import java.util.Map;
 
@@ -20,10 +20,10 @@ public class FertilizerCommand implements Command {
     /**
      * 命令接收方，仓库
      */
-    private MoleFarmWarehouse moleFarmWarehouse = MoleAdapter.getInstance().getFarmWarehouse();
+    private seerfarmWarehouse seerfarmWarehouse = seerAdapter.getInstance().getFarmWarehouse();
 
-    public void setMoleFarmWarehouse(MoleFarmWarehouse moleFarmWarehouse) {
-        this.moleFarmWarehouse = moleFarmWarehouse;
+    public void setseerfarmWarehouse(seerfarmWarehouse seerfarmWarehouse) {
+        this.seerfarmWarehouse = seerfarmWarehouse;
     }
 
     /**
@@ -38,7 +38,7 @@ public class FertilizerCommand implements Command {
         try{
             fertilizer = fertilizerFactory.create(Home.fertilizerMap.get(name));
         } catch (FertilizerNotFoundException e){e.printStackTrace();}
-        return moleFarmWarehouse.buyFertilizer(fertilizer, num);
+        return seerfarmWarehouse.buyFertilizer(fertilizer, num);
     }
 
 }

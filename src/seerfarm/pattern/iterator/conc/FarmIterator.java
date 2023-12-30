@@ -1,7 +1,7 @@
 package seerfarm.pattern.iterator.conc;
 
-import molefarm.common.MoleFarmBlock;
-import molefarm.pattern.iterator.Iterator;
+import seerfarm.common.seerfarmBlock;
+import seerfarm.pattern.iterator.Iterator;
 
 import java.util.List;
 
@@ -10,21 +10,21 @@ import java.util.List;
  */
 public class FarmIterator implements Iterator {
 
-    private List<MoleFarmBlock> farmBlockList;
+    private List<seerfarmBlock> farmBlockList;
     private int index = 0;
 
-    public FarmIterator(List<MoleFarmBlock> list) {
+    public FarmIterator(List<seerfarmBlock> list) {
         this.farmBlockList = list;
     }
 
     @Override
-    public MoleFarmBlock first() {
+    public seerfarmBlock first() {
         return farmBlockList.get(0);
     }
 
     @Override
-    public MoleFarmBlock next() {
-        MoleFarmBlock block = null;
+    public seerfarmBlock next() {
+        seerfarmBlock block = null;
         if (this.hasNext()) {
             block = farmBlockList.get(index++);
         }
@@ -36,7 +36,7 @@ public class FarmIterator implements Iterator {
         return index < farmBlockList.size();
     }
 
-    public MoleFarmBlock getByIndex(int index_) {
+    public seerfarmBlock getByIndex(int index_) {
         if (index_ < 0 || index_ >= farmBlockList.size()) {
             throw new IndexOutOfBoundsException("索引超出范围！");
         } else {

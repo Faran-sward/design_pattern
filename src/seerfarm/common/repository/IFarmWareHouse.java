@@ -1,9 +1,9 @@
 package seerfarm.common.repository;
 
-import molefarm.common.product.AbstractCrops;
-import molefarm.common.product.AbstractFertilizer;
-import molefarm.common.product.AbstractSeed;
-import molefarm.common.product.IProduct;
+import seerfarm.common.product.AbstractCrops;
+import seerfarm.common.product.AbstractFertilizer;
+import seerfarm.common.product.AbstractSeed;
+import seerfarm.common.product.IProduct;
 
 import java.util.List;
 import java.util.Map;
@@ -45,7 +45,7 @@ public interface IFarmWareHouse {
      * @param objectList
      * @return
      */
-    <T extends IProduct> boolean provideItemToMole(List<T> objectList);
+    <T extends IProduct> boolean provideItemToseer(List<T> objectList);
 
     /**
      * 存作物到仓库

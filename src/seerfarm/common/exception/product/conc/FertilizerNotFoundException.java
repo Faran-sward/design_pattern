@@ -1,6 +1,6 @@
 package seerfarm.common.exception.product.conc;
 
-import molefarm.common.exception.product.ProductNotFoundException;
+import seerfarm.common.exception.product.ProductNotFoundException;
 
 public class FertilizerNotFoundException extends ProductNotFoundException {
     public FertilizerNotFoundException(String message) {

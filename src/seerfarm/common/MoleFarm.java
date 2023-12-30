@@ -1,17 +1,17 @@
 package seerfarm.common;
 
-import molefarm.Home;
-import molefarm.common.exception.MyException;
-import molefarm.common.exception.product.conc.CropsNotFoundException;
-import molefarm.common.exception.product.conc.SeedNotFoundException;
-import molefarm.common.farm.IFarm;
-import molefarm.common.product.AbstractCrops;
-import molefarm.common.product.AbstractSeed;
-import molefarm.common.status.FarmBlockStatus;
-import molefarm.common.status.product.Shape;
-import molefarm.common.utils.JsonOp;
-import molefarm.pattern.factory.conc.CropsFactory;
-import molefarm.pattern.iterator.conc.FarmIterator;
+import seerfarm.Home;
+import seerfarm.common.exception.MyException;
+import seerfarm.common.exception.product.conc.CropsNotFoundException;
+import seerfarm.common.exception.product.conc.SeedNotFoundException;
+import seerfarm.common.farm.IFarm;
+import seerfarm.common.product.AbstractCrops;
+import seerfarm.common.product.AbstractSeed;
+import seerfarm.common.status.FarmBlockStatus;
+import seerfarm.common.status.product.Shape;
+import seerfarm.common.utils.JsonOp;
+import seerfarm.pattern.factory.conc.CropsFactory;
+import seerfarm.pattern.iterator.conc.FarmIterator;
 
 import java.util.*;
 
@@ -19,7 +19,7 @@ import java.util.*;
  * 摩尔个人农场
  * implements IFarm
  */
-public class MoleFarm implements IFarm {
+public class seerfarm implements IFarm {
 
     /**
      * 农田块数量
@@ -36,16 +36,16 @@ public class MoleFarm implements IFarm {
     /**
      * 农田块列表
      */
-    private List<MoleFarmBlock> farmBlockList;
+    private List<seerfarmBlock> farmBlockList;
 
-    public static MoleFarm getInstance(){
-        return new MoleFarm();
+    public static seerfarm getInstance(){
+        return new seerfarm();
     }
 
-    private MoleFarm(){
+    private seerfarm(){
         farmBlockList = new ArrayList<>();
         for (int i = 0; i < farmBlockCount; ++i) {
-            farmBlockList.add(new MoleFarmBlock());
+            farmBlockList.add(new seerfarmBlock());
         }
     }
     /**
@@ -67,7 +67,7 @@ public class MoleFarm implements IFarm {
     @Override
     public void plantBatchSeeds(AbstractSeed seed) {
         //寻找空地，一键播种
-        for (MoleFarmBlock item : farmBlockList) {
+        for (seerfarmBlock item : farmBlockList) {
             if (item.getSeed() != null) {
                 FarmGrowth.plantSeed(seed, item);
             }
@@ -87,7 +87,7 @@ public class MoleFarm implements IFarm {
      */
     public void plantBatchSeeds(String name) throws SeedNotFoundException {
         //寻找空地，一键播种
-        for (MoleFarmBlock item : farmBlockList) {
+        for (seerfarmBlock item : farmBlockList) {
             if (item.getSeed() == null) {
                 if (!FarmGrowth.plantSeed(name, item)) break;
             }
@@ -107,7 +107,7 @@ public class MoleFarm implements IFarm {
         /**
          * 存入map里面
          */
-        for (MoleFarmBlock item : farmBlockList) {
+        for (seerfarmBlock item : farmBlockList) {
             if (item.getSeed()!=null&&item.getSeedStatus() != null && item.getSeedStatus() >= 6) {
                 String name = item.getSeed().getName().replace("种子","");
                 item.setSeed(null);
@@ -166,7 +166,7 @@ public class MoleFarm implements IFarm {
             System.out.println(i == 0 ? "①~③" : i == 3 ? "④~⑥" : "⑦~⑨");
         }
         //随即添加农田块状态
-        for(MoleFarmBlock block:farmBlockList){
+        for(seerfarmBlock block:farmBlockList){
             block.addStatus(weather);
         }
     }

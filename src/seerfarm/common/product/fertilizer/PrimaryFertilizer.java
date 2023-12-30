@@ -1,7 +1,7 @@
 package seerfarm.common.product.fertilizer;
 
-import molefarm.common.product.AbstractFertilizer;
-import molefarm.common.status.product.Level;
+import seerfarm.common.product.AbstractFertilizer;
+import seerfarm.common.status.product.Level;
 
 /**
  * 初级肥料

@@ -1,29 +1,27 @@
 package seerfarm;
 
-import molefarm.common.*;
-import molefarm.common.exception.product.ProductNotFoundException;
-import molefarm.common.exception.product.conc.CropsNotFoundException;
-import molefarm.common.exception.product.conc.FertilizerNotFoundException;
-import molefarm.common.exception.product.conc.SeedNotFoundException;
-import molefarm.common.product.AbstractSeed;
-import molefarm.common.product.IProduct;
-import molefarm.common.utils.JsonOp;
-import molefarm.pattern.adapter.conc.MoleAdapter;
-import molefarm.pattern.adapter.conc.WeatherAdapter;
-import molefarm.pattern.builder.Director;
-import molefarm.pattern.builder.conc.ConcreteBuilder1;
-import molefarm.pattern.builder.conc.ConcreteBuilder2;
-import molefarm.pattern.factory.Factory;
-import molefarm.pattern.factory.conc.CropsFactory;
-import molefarm.pattern.factory.conc.FertilizerFactory;
-import molefarm.pattern.factory.conc.SeedFactory;
-import molefarm.pattern.iterator.conc.FarmIterator;
-import molefarm.pattern.observer.WeatherObserver;
-import molefarm.pattern.proxy.Proxy;
+import seerfarm.common.*;
+import seerfarm.common.exception.product.ProductNotFoundException;
+import seerfarm.common.exception.product.conc.CropsNotFoundException;
+import seerfarm.common.exception.product.conc.FertilizerNotFoundException;
+import seerfarm.common.exception.product.conc.SeedNotFoundException;
+import seerfarm.common.product.AbstractSeed;
+import seerfarm.common.product.IProduct;
+import seerfarm.pattern.adapter.conc.WeatherAdapter;
+import seerfarm.pattern.adapter.conc.seerAdapter;
+import seerfarm.pattern.builder.Director;
+import seerfarm.pattern.builder.conc.ConcreteBuilder1;
+import seerfarm.pattern.builder.conc.ConcreteBuilder2;
+import seerfarm.pattern.factory.Factory;
+import seerfarm.pattern.factory.conc.CropsFactory;
+import seerfarm.pattern.factory.conc.FertilizerFactory;
+import seerfarm.pattern.factory.conc.SeedFactory;
+import seerfarm.pattern.iterator.conc.FarmIterator;
+import seerfarm.pattern.observer.WeatherObserver;
+import seerfarm.pattern.proxy.Proxy;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -31,11 +29,11 @@ import java.util.Scanner;
  */
 public class FarmProcess {
     //摩尔角色
-    private MoleAdapter mole=MoleAdapter.getInstance();
+    private seerAdapter SEER=seerAdapter.getInstance();
     //农田
-    private MoleFarm farm = mole.getMoleFarm();
+    private seerfarm farm = SEER.getseerfarm();
     //仓库
-    private MoleFarmWarehouse warehouse = mole.getFarmWarehouse();
+    private seerfarmWarehouse warehouse = SEER.getFarmWarehouse();
     //商店
     private Shop shop = Home.shop;
     //具体工厂，负责生产种子/作物/肥料
@@ -63,7 +61,7 @@ public class FarmProcess {
      * @param str3
      * @param block
      */
-    public void farmSmallProcess(String str3, MoleFarmBlock block) {
+    public void farmSmallProcess(String str3, seerfarmBlock block) {
         Scanner input = new Scanner(System.in);
         switch (str3) {
             case "1":
@@ -82,13 +80,13 @@ public class FarmProcess {
                                 ConcreteBuilder2 concreteBuilder2 = new ConcreteBuilder2();
                                 concreteBuilder2.setFarmBlock(block);
                                 Director director = new Director(concreteBuilder2, block);
-                                director.getMoleFarmBlock(seedFactory.create(Home.seedMap.get(seedName)));
+                                director.getseerfarmBlock(seedFactory.create(Home.seedMap.get(seedName)));
                                 break;
                             case "3":
                                 ConcreteBuilder1 concreteBuilder1 = new ConcreteBuilder1();
                                 concreteBuilder1.setFarmBlock(block);
                                 Director director1 = new Director(concreteBuilder1, block);
-                                director1.getMoleFarmBlock(seedFactory.create(Home.seedMap.get(seedName)));
+                                director1.getseerfarmBlock(seedFactory.create(Home.seedMap.get(seedName)));
                                 break;
                             default:
                                 break;
@@ -179,7 +177,7 @@ public class FarmProcess {
                 int index = Integer.parseInt(str2) - 1;
                 //获取具体农田块对象
                 FarmIterator iterator = farm.getIterator();
-                MoleFarmBlock block = iterator.getByIndex(index);
+                seerfarmBlock block = iterator.getByIndex(index);
                 //控制台输出农田块信息
                 block.getInfo();
                 System.out.println("请选择：[0]返回上级 [1]种植作物 [2]收获作物 [3]浇水 [4]除草 [5]除虫 [6]施肥 [7]铲除作物");
@@ -211,7 +209,7 @@ public class FarmProcess {
                 objClassName=Home.seedMap.get(objName);
             }
             IProduct obj = factory.create(objClassName);
-            System.out.println("请输入想要购买的" + name + "数目(您现在有" + mole.getMoleDou() + "摩尔豆):");
+            System.out.println("请输入想要购买的" + name + "数目(您现在有" + SEER.getseerDou() + "摩尔豆):");
             int objNum;
             String str = input.next();
             if (str.matches("[0-9]+")) {
@@ -226,7 +224,7 @@ public class FarmProcess {
                 if (proxy.seedPurchase(objName, objNum)) {
                     System.out.println("正在向商店购买" + obj.getName() +
                             "，共消费" + price + "摩尔豆，" +
-                            "剩余" + mole.getMoleDou() + "摩尔豆\n");
+                            "剩余" + SEER.getseerDou() + "摩尔豆\n");
                 } else {
                     System.out.println("购买失败！");
                 }
@@ -234,7 +232,7 @@ public class FarmProcess {
                 if (proxy.fertilizerPurchase(objName, objNum)) {
                     System.out.println("正在向商店购买" + obj.getName() +
                             "，共消费" + price + "摩尔豆，" +
-                            "剩余" + mole.getMoleDou() + "摩尔豆\n");
+                            "剩余" + SEER.getseerDou() + "摩尔豆\n");
                 } else {
                     System.out.println("购买失败！");
                 }
@@ -328,7 +326,7 @@ public class FarmProcess {
             String str1 = input.next();
             if("0".equals(str1))break;
             for (FarmIterator it = farm.getIterator(); it.hasNext(); ) {
-                MoleFarmBlock next = it.next();
+                seerfarmBlock next = it.next();
                 if (next.getSeed() != null && next.getSeedStatus() != null) {
                     next.growth();
                 }

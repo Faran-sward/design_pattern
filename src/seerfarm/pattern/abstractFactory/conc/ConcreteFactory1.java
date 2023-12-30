@@ -1,21 +1,21 @@
 package seerfarm.pattern.abstractFactory.conc;
 
-import molefarm.Home;
-import molefarm.common.exception.factory.FactoryNotFoundException;
-import molefarm.common.exception.product.FactoryNotProduceException;
-import molefarm.common.exception.product.conc.CropsNotFoundException;
-import molefarm.common.exception.product.conc.FertilizerNotFoundException;
-import molefarm.common.exception.product.conc.SeedNotFoundException;
-import molefarm.common.exception.product.conc.ToolNotFoundException;
-import molefarm.common.product.AbstractCrops;
-import molefarm.common.product.AbstractFertilizer;
-import molefarm.common.product.AbstractSeed;
-import molefarm.common.product.AbstractTool;
-import molefarm.pattern.abstractFactory.IFactory;
-import molefarm.pattern.factory.conc.CropsFactory;
-import molefarm.pattern.factory.conc.FertilizerFactory;
-import molefarm.pattern.factory.conc.SeedFactory;
-import molefarm.pattern.factory.conc.ToolFactory;
+import seerfarm.Home;
+import seerfarm.common.exception.factory.FactoryNotFoundException;
+import seerfarm.common.exception.product.FactoryNotProduceException;
+import seerfarm.common.exception.product.conc.CropsNotFoundException;
+import seerfarm.common.exception.product.conc.FertilizerNotFoundException;
+import seerfarm.common.exception.product.conc.SeedNotFoundException;
+import seerfarm.common.exception.product.conc.ToolNotFoundException;
+import seerfarm.common.product.AbstractCrops;
+import seerfarm.common.product.AbstractFertilizer;
+import seerfarm.common.product.AbstractSeed;
+import seerfarm.common.product.AbstractTool;
+import seerfarm.pattern.abstractFactory.IFactory;
+import seerfarm.pattern.factory.conc.CropsFactory;
+import seerfarm.pattern.factory.conc.FertilizerFactory;
+import seerfarm.pattern.factory.conc.SeedFactory;
+import seerfarm.pattern.factory.conc.ToolFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +25,7 @@ import java.util.List;
  * 生产白菜、草莓、水稻的作物及种子
  * 生产高级肥料
  * 生产水壶和镰刀
- * 此类生产产品去moleFarm.pattern.factory.conc下的对应工厂调用方法
+ * 此类生产产品去seerfarm.pattern.factory.conc下的对应工厂调用方法
  */
 public class ConcreteFactory1 implements IFactory {
     private final List<String> cropsList = Arrays.asList("Cabbage", "Strawberry", "Rice");

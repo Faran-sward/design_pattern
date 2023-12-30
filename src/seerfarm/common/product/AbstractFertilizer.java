@@ -1,6 +1,6 @@
 package seerfarm.common.product;
 
-import molefarm.common.status.product.Level;
+import seerfarm.common.status.product.Level;
 
 import java.util.Objects;
 

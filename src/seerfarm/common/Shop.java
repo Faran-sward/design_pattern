@@ -1,9 +1,9 @@
 package seerfarm.common;
 
-import molefarm.common.product.AbstractCrops;
-import molefarm.common.product.AbstractFertilizer;
-import molefarm.common.product.AbstractSeed;
-import molefarm.pattern.adapter.conc.MoleAdapter;
+import seerfarm.common.product.AbstractCrops;
+import seerfarm.common.product.AbstractFertilizer;
+import seerfarm.common.product.AbstractSeed;
+import seerfarm.pattern.adapter.conc.seerAdapter;
 
 /**
  * 商店类
@@ -12,9 +12,9 @@ import molefarm.pattern.adapter.conc.MoleAdapter;
  */
 public class Shop {
 
-    private MoleAdapter mole=MoleAdapter.getInstance();
+    private seerAdapter SEER=seerAdapter.getInstance();
 
-    private MoleFarmWarehouse moleFarmWarehouse= mole.getFarmWarehouse();
+    private seerfarmWarehouse seerfarmWarehouse= SEER.getFarmWarehouse();
 
     //关联商店与仓库
     private Shop() {
@@ -31,7 +31,7 @@ public class Shop {
      * @return
      */
     public boolean buySeeds(AbstractSeed seed, int num) {
-        return moleFarmWarehouse.buySeeds(seed, num);
+        return seerfarmWarehouse.buySeeds(seed, num);
     }
 
     /**
@@ -41,7 +41,7 @@ public class Shop {
      * @return
      */
     public boolean buyFertilizer(AbstractFertilizer fertilizer, int num) {
-        return moleFarmWarehouse.buyFertilizer(fertilizer, num);
+        return seerfarmWarehouse.buyFertilizer(fertilizer, num);
     }
 
     /**
@@ -51,6 +51,6 @@ public class Shop {
      * @return
      */
     public boolean sellCrops(AbstractCrops crops, int num) {
-        return moleFarmWarehouse.sellCrops(crops, num);
+        return seerfarmWarehouse.sellCrops(crops, num);
     }
 }

@@ -1,14 +1,14 @@
 package seerfarm.pattern.builder;
 
-import molefarm.common.MoleFarmBlock;
-import molefarm.common.product.AbstractSeed;
+import seerfarm.common.seerfarmBlock;
+import seerfarm.common.product.AbstractSeed;
 
 public class Director {
     private Builder builder;
 
-    private MoleFarmBlock farmBlock;
+    private seerfarmBlock farmBlock;
 
-    public Director(Builder builder, MoleFarmBlock farmBlock) {
+    public Director(Builder builder, seerfarmBlock farmBlock) {
         this.builder = builder;
         this.farmBlock = farmBlock;
     }
@@ -17,11 +17,11 @@ public class Director {
         this.builder = builder;
     }
 
-    public void setFarmBlock(MoleFarmBlock farmBlock) {
+    public void setFarmBlock(seerfarmBlock farmBlock) {
         this.farmBlock = farmBlock;
     }
 
-    public void getMoleFarmBlock(AbstractSeed seed) {
+    public void getseerfarmBlock(AbstractSeed seed) {
         //要先初始化农田块
         builder.setFarmBlock(farmBlock);
         builder.buildPlant(seed);

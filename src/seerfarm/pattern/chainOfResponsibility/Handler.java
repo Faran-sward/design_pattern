@@ -1,8 +1,8 @@
 package seerfarm.pattern.chainOfResponsibility;
 
-import molefarm.common.MoleFarmWarehouse;
-import molefarm.common.product.IProduct;
-import molefarm.pattern.adapter.conc.MoleAdapter;
+import seerfarm.common.seerfarmWarehouse;
+import seerfarm.common.product.IProduct;
+import seerfarm.pattern.adapter.conc.seerAdapter;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import java.util.List;
  * 任务接收者抽象类
  */
 public abstract class Handler {
-    protected MoleAdapter mole=MoleAdapter.getInstance();
+    protected seerAdapter SEER=seerAdapter.getInstance();
 
-    protected MoleFarmWarehouse farmWarehouse = mole.getFarmWarehouse();
+    protected seerfarmWarehouse farmWarehouse = SEER.getFarmWarehouse();
 
     private Handler next;
 

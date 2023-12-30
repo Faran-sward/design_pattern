@@ -1,8 +1,8 @@
 package seerfarm.test.state;
 
-import molefarm.common.MoleFarmBlock;
-import molefarm.pattern.adapter.conc.WeatherAdapter;
-import molefarm.pattern.state.Context;
+import seerfarm.common.seerfarmBlock;
+import seerfarm.pattern.adapter.conc.WeatherAdapter;
+import seerfarm.pattern.state.Context;
 
 //根据天气状态的变化，浇水和除虫的方法也有变化
 public class StateTest {
@@ -17,7 +17,7 @@ public class StateTest {
     public static void main(String[] args) {
         System.out.println("----调用状态模式ing----");
         //初始化一个农田块
-        MoleFarmBlock block=new MoleFarmBlock();
+        seerfarmBlock block=new seerfarmBlock();
         //初始化上下文
         Context context=new Context(weather,block);
 

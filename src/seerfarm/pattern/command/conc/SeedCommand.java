@@ -1,13 +1,13 @@
 package seerfarm.pattern.command.conc;
 
-import molefarm.Home;
-import molefarm.common.MoleFarmWarehouse;
-import molefarm.common.exception.product.conc.SeedNotFoundException;
-import molefarm.common.product.AbstractSeed;
-import molefarm.common.utils.JsonOp;
-import molefarm.pattern.adapter.conc.MoleAdapter;
-import molefarm.pattern.command.Command;
-import molefarm.pattern.factory.conc.SeedFactory;
+import seerfarm.Home;
+import seerfarm.common.seerfarmWarehouse;
+import seerfarm.common.exception.product.conc.SeedNotFoundException;
+import seerfarm.common.product.AbstractSeed;
+import seerfarm.common.utils.JsonOp;
+import seerfarm.pattern.adapter.conc.seerAdapter;
+import seerfarm.pattern.command.Command;
+import seerfarm.pattern.factory.conc.SeedFactory;
 
 import java.util.Map;
 
@@ -20,7 +20,7 @@ public class SeedCommand implements Command {
     /**
      * 命令接收方，仓库
      */
-    private MoleFarmWarehouse moleFarmWarehouse = MoleAdapter.getInstance().getFarmWarehouse();
+    private seerfarmWarehouse seerfarmWarehouse = seerAdapter.getInstance().getFarmWarehouse();
 
     /**
      * 商店接收命令，为仓库买入种子
@@ -33,6 +33,6 @@ public class SeedCommand implements Command {
         try{
             seed = seedFactory.create(Home.seedMap.get(name));
         } catch (SeedNotFoundException e){e.printStackTrace();}
-        return moleFarmWarehouse.buySeeds(seed, num);
+        return seerfarmWarehouse.buySeeds(seed, num);
     }
 }

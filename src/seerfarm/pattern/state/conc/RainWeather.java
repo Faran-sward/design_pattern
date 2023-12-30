@@ -1,8 +1,8 @@
 package seerfarm.pattern.state.conc;
 
-import molefarm.common.MoleFarmBlock;
-import molefarm.common.status.FarmBlockStatus;
-import molefarm.pattern.adapter.conc.WeatherAdapter;
+import seerfarm.common.seerfarmBlock;
+import seerfarm.common.status.FarmBlockStatus;
+import seerfarm.pattern.adapter.conc.WeatherAdapter;
 
 import java.util.Set;
 
@@ -15,12 +15,12 @@ public class RainWeather extends WeatherAdapter {
     }
 
     @Override
-    public void watering(MoleFarmBlock farmBlock) {
+    public void watering(seerfarmBlock farmBlock) {
         System.out.println("下雨天还敢浇水，不怕烂根么！！！");
     }
 
     @Override
-    public void disInsection(MoleFarmBlock farmBlock) {
+    public void disInsection(seerfarmBlock farmBlock) {
         Set<FarmBlockStatus> blockStatusSet = farmBlock.getBlockStatusSet();
         if(blockStatusSet.removeIf(s->s.equals(FarmBlockStatus.INSECT_DISASTER))) {
             pesticide.ToolBehavior();

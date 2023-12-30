@@ -1,8 +1,8 @@
 package seerfarm.common.product;
 
-import molefarm.common.status.product.Color;
-import molefarm.common.status.product.Level;
-import molefarm.common.status.product.Size;
+import seerfarm.common.status.product.Color;
+import seerfarm.common.status.product.Level;
+import seerfarm.common.status.product.Size;
 
 /**
  * 我也不知道为什么要写这个接口，先写上去

@@ -1,11 +1,11 @@
 package seerfarm.test.iterator;
 
-import molefarm.common.MoleFarm;
-import molefarm.pattern.iterator.conc.FarmIterator;
+import seerfarm.common.seerfarm;
+import seerfarm.pattern.iterator.conc.FarmIterator;
 
 public class IteratorTest {
     public static void test(){
-        MoleFarm farm = MoleFarm.getInstance();
+        seerfarm farm = seerfarm.getInstance();
         FarmIterator iterator = farm.getIterator();
         System.out.println(iterator.first());
         System.out.println("----调用迭代器模式ing----");

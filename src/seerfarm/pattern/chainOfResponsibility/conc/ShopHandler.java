@@ -1,7 +1,7 @@
 package seerfarm.pattern.chainOfResponsibility.conc;
 
-import molefarm.common.product.IProduct;
-import molefarm.pattern.chainOfResponsibility.Handler;
+import seerfarm.common.product.IProduct;
+import seerfarm.pattern.chainOfResponsibility.Handler;
 
 import java.util.List;
 
@@ -14,12 +14,12 @@ public class ShopHandler extends Handler {
     public <T extends IProduct> boolean provideSeeds(List<T> list) {
         for (T item : list) {
             Double price = item.getPrice();
-            if (mole.getMoleDou() < price) {
+            if (SEER.getseerDou() < price) {
                 System.out.println("抱歉，摩尔豆不足，进货失败");
                 return false;
             } else {
-                double newPrice = mole.getMoleDou() - price;
-                mole.setMoney(newPrice);
+                double newPrice = SEER.getseerDou() - price;
+                SEER.setMoney(newPrice);
             }
         }
         System.out.println("进货成功！");

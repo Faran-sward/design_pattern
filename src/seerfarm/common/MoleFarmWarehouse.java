@@ -1,20 +1,20 @@
 package seerfarm.common;
 
-import framework.simplefactory.Mole;
-import molefarm.common.product.AbstractCrops;
-import molefarm.common.product.AbstractFertilizer;
-import molefarm.common.product.AbstractSeed;
-import molefarm.common.product.IProduct;
-import molefarm.common.product.crops.*;
-import molefarm.common.product.fertilizer.AdvancedFertilizer;
-import molefarm.common.product.fertilizer.MiddleFertilizer;
-import molefarm.common.product.fertilizer.PrimaryFertilizer;
-import molefarm.common.product.seed.*;
-import molefarm.common.product.tool.*;
-import molefarm.common.repository.IFarmWareHouse;
-import molefarm.pattern.adapter.conc.MoleAdapter;
-import molefarm.pattern.chainOfResponsibility.conc.ShopHandler;
-import molefarm.pattern.chainOfResponsibility.conc.WareHouseHandler;
+import framework.simplefactory.SEER;
+import seerfarm.common.product.AbstractCrops;
+import seerfarm.common.product.AbstractFertilizer;
+import seerfarm.common.product.AbstractSeed;
+import seerfarm.common.product.IProduct;
+import seerfarm.common.product.crops.*;
+import seerfarm.common.product.fertilizer.AdvancedFertilizer;
+import seerfarm.common.product.fertilizer.MiddleFertilizer;
+import seerfarm.common.product.fertilizer.PrimaryFertilizer;
+import seerfarm.common.product.seed.*;
+import seerfarm.common.product.tool.*;
+import seerfarm.common.repository.IFarmWareHouse;
+import seerfarm.pattern.adapter.conc.seerAdapter;
+import seerfarm.pattern.chainOfResponsibility.conc.ShopHandler;
+import seerfarm.pattern.chainOfResponsibility.conc.WareHouseHandler;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -26,12 +26,12 @@ import java.util.Map;
  * 摩尔个人仓库
  * implements IFarmWareHouse
  */
-public class MoleFarmWarehouse implements IFarmWareHouse {
+public class seerfarmWarehouse implements IFarmWareHouse {
 
-    private Mole mole;
+    private SEER SEER;
 
-    private MoleFarmWarehouse(Mole mole) {
-        this.mole=mole;
+    private seerfarmWarehouse(SEER SEER) {
+        this.SEER=SEER;
         this.seedMap.put(new CabbageSeed(), 5);
         this.seedMap.put(new EggplantSeed(), 5);
         this.seedMap.put(new RiceSeed(), 5);
@@ -71,12 +71,12 @@ public class MoleFarmWarehouse implements IFarmWareHouse {
 
     private Shovel shovel = Shovel.newInstance();
 
-    public void setMole(MoleAdapter mole) {
-        this.mole = mole;
+    public void setseer(seerAdapter SEER) {
+        this.SEER = SEER;
     }
 
-    public Mole getMole(){
-        return mole;
+    public SEER getseer(){
+        return SEER;
     }
 
     public Hoe getHoe() {
@@ -111,8 +111,8 @@ public class MoleFarmWarehouse implements IFarmWareHouse {
         return cropsMap;
     }
 
-    public static MoleFarmWarehouse getInstance(Mole mole){
-        return new MoleFarmWarehouse(mole);
+    public static seerfarmWarehouse getInstance(SEER SEER){
+        return new seerfarmWarehouse(SEER);
     }
 
     /**
@@ -127,13 +127,13 @@ public class MoleFarmWarehouse implements IFarmWareHouse {
         Double price = object.getPrice() * num;
         //需要有一个摩尔角色类，判断剩余摩尔豆是否大于等于交换金额，是则返回true，并扣除相应大小的摩尔豆
         //调用适配器
-        Double money = mole.getMoney();
+        Double money = SEER.getMoney();
         if (money < price) {
             return false;
         }
-        mole.setMoney(money - price);
+        SEER.setMoney(money - price);
         try {
-            Method method = MoleFarmWarehouse.class.getDeclaredMethod(methodName);
+            Method method = seerfarmWarehouse.class.getDeclaredMethod(methodName);
             Map<T, Integer> objectMap = (Map<T, Integer>) method.invoke(this);
             Integer oriNum = objectMap.putIfAbsent(object, num);
             //若仓库中原本有库存，则将其与新增进货量累加
@@ -155,7 +155,7 @@ public class MoleFarmWarehouse implements IFarmWareHouse {
      * @return
      */
     @Override
-    public <T extends IProduct> boolean provideItemToMole(List<T> objectList) {
+    public <T extends IProduct> boolean provideItemToseer(List<T> objectList) {
         //调用职责链模式
         WareHouseHandler wareHouseHandler = new WareHouseHandler();
         ShopHandler shopHandler = new ShopHandler();
@@ -213,8 +213,8 @@ public class MoleFarmWarehouse implements IFarmWareHouse {
             return false;
         }
         this.getCropsMap().put(crops, left - num);
-        mole.setMoney(mole.getMoney()+ crops.getPrice() * num);
-        System.out.println("卖出成功，共进账" + crops.getPrice() * num + "摩尔豆！" + "当前余额(" + mole.getMoney() + ")");
+        SEER.setMoney(SEER.getMoney()+ crops.getPrice() * num);
+        System.out.println("卖出成功，共进账" + crops.getPrice() * num + "摩尔豆！" + "当前余额(" + SEER.getMoney() + ")");
         return true;
     }
 

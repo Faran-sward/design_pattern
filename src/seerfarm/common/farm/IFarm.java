@@ -1,7 +1,7 @@
 package seerfarm.common.farm;
 
-import molefarm.common.product.AbstractCrops;
-import molefarm.common.product.AbstractSeed;
+import seerfarm.common.product.AbstractCrops;
+import seerfarm.common.product.AbstractSeed;
 
 import java.util.Map;
 

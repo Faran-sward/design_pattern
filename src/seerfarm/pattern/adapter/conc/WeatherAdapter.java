@@ -1,14 +1,14 @@
 package seerfarm.pattern.adapter.conc;
 
-import molefarm.common.MoleFarmBlock;
-import molefarm.common.product.tool.Pesticide;
-import molefarm.common.product.tool.WateringCan;
-import molefarm.pattern.adapter.Target;
-import molefarm.pattern.adapter.Weather;
-import molefarm.pattern.state.conc.CloudyWeather;
-import molefarm.pattern.state.conc.InsectDamageWeather;
-import molefarm.pattern.state.conc.RainWeather;
-import molefarm.pattern.state.conc.SunnyWeather;
+import seerfarm.common.seerfarmBlock;
+import seerfarm.common.product.tool.Pesticide;
+import seerfarm.common.product.tool.WateringCan;
+import seerfarm.pattern.adapter.Target;
+import seerfarm.pattern.adapter.Weather;
+import seerfarm.pattern.state.conc.CloudyWeather;
+import seerfarm.pattern.state.conc.InsectDamageWeather;
+import seerfarm.pattern.state.conc.RainWeather;
+import seerfarm.pattern.state.conc.SunnyWeather;
 
 import java.util.Random;
 
@@ -17,11 +17,11 @@ import java.util.Random;
  */
 public class WeatherAdapter extends Weather implements Target {
 
-    public static MoleAdapter mole=MoleAdapter.getInstance();
+    public static seerAdapter SEER=seerAdapter.getInstance();
 
-    public static WateringCan wateringCan= mole.getFarmWarehouse().getWateringCan();
+    public static WateringCan wateringCan= SEER.getFarmWarehouse().getWateringCan();
 
-    public static Pesticide pesticide= mole.getFarmWarehouse().getPesticide();
+    public static Pesticide pesticide= SEER.getFarmWarehouse().getPesticide();
 
     public static WeatherAdapter adapter;
     //随机跳转天气
@@ -51,7 +51,7 @@ public class WeatherAdapter extends Weather implements Target {
         return adapter;
     }
 
-    public void watering(MoleFarmBlock farmBlock){}
+    public void watering(seerfarmBlock farmBlock){}
 
-    public void disInsection(MoleFarmBlock farmBlock){}
+    public void disInsection(seerfarmBlock farmBlock){}
 }
