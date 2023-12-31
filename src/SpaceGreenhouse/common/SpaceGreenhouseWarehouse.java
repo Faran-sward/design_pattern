@@ -1,5 +1,6 @@
 package SpaceGreenhouse.common;
 
+import SpaceGreenhouse.common.Greenhouse.ISpaceGreenhouse;
 import framework.simplefactory.SEER;
 import SpaceGreenhouse.common.product.AbstractCrops;
 import SpaceGreenhouse.common.product.AbstractFertilizer;
@@ -11,8 +12,8 @@ import SpaceGreenhouse.common.product.fertilizer.MiddleFertilizer;
 import SpaceGreenhouse.common.product.fertilizer.PrimaryFertilizer;
 import SpaceGreenhouse.common.product.seed.*;
 import SpaceGreenhouse.common.product.tool.*;
-import SpaceGreenhouse.common.repository.ISpaceGreenhouseWareHouse;
-import SpaceGreenhouse.pattern.adapter.conc.SEERAdapter;
+import SpaceGreenhouse.common.repository.*;
+import SpaceGreenhouse.pattern.adapter.conc.SeerAdapter;
 import SpaceGreenhouse.pattern.chainOfResponsibility.conc.ShopHandler;
 import SpaceGreenhouse.pattern.chainOfResponsibility.conc.WareHouseHandler;
 
@@ -26,7 +27,7 @@ import java.util.Map;
  * 赛尔个人仓库
  * implements ISpaceGreenhouseWareHouse
  */
-public class SpaceGreenhouseWarehouse implements ISpaceGreenhouseWareHouse {
+public class SpaceGreenhouseWarehouse implements ISpaceGreenhouse {
 
     private SEER SEER;
 
@@ -71,7 +72,7 @@ public class SpaceGreenhouseWarehouse implements ISpaceGreenhouseWareHouse {
 
     private Shovel shovel = Shovel.newInstance();
 
-    public void setSEER(SEERAdapter SEER) {
+    public void setSEER(SeerAdapter SEER) {
         this.SEER = SEER;
     }
 

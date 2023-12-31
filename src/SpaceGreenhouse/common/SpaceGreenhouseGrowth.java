@@ -9,7 +9,8 @@ import SpaceGreenhouse.common.product.AbstractSeed;
 import SpaceGreenhouse.common.status.SpaceGreenhouseBlockStatus;
 import SpaceGreenhouse.common.status.SeedStatus;
 import SpaceGreenhouse.common.utils.JsonOp;
-import SpaceGreenhouse.pattern.adapter.conc.SEERAdapter;
+import SpaceGreenhouse.pattern.adapter.conc.SeerAdapter;
+import SpaceGreenhouse.pattern.adapter.conc.SeerAdapter;
 import SpaceGreenhouse.pattern.adapter.conc.WeatherAdapter;
 import SpaceGreenhouse.pattern.factory.conc.CropsFactory;
 import SpaceGreenhouse.pattern.factory.conc.FertilizerFactory;
@@ -24,7 +25,7 @@ import java.util.*;
  */
 public class SpaceGreenhouseGrowth {
     //赛尔
-    private static final SEERAdapter SEER = SEERAdapter.getInstance();
+    private static final SeerAdapter SEER = SeerAdapter.getInstance();
     //
     private static final SeedFactory seedFactory = Home.seedFactory;
 

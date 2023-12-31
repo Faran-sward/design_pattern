@@ -16,16 +16,16 @@ import SpaceGreenhouse.pattern.adapter.Target;
  */
 public class SeerAdapter extends SEER implements Target {
 
-    private static SeerAdapter SEERAdapter=new SeerAdapter(SeerManor.getPlayer());
+    private static SeerAdapter SEERAdapter=new SeerAdapter(SEERManor.getPlayer());
 
     //这个SEER对象要从外界传进来的，因为这是适配器
-    private Seer SEER;
+    private SEER SEER;
 
-    private SpaceGreenhouse SpaceGreenhouse=SpaceGreenhouse.getInstance();
+    private SpaceGreenhouse spaceGreenhouse = SpaceGreenhouse.getInstance();
 
     private SpaceGreenhouseWarehouse SpaceGreenhouseWarehouse;
 
-    private SeerAdapter(Seer SEER){
+    private SeerAdapter(SEER SEER){
         this.SEER=SEER;
         SpaceGreenhouseWarehouse=SpaceGreenhouseWarehouse.getInstance(SEER);
     }
@@ -49,12 +49,12 @@ public class SeerAdapter extends SEER implements Target {
         SEER.setMoney(money);
     }
 
-    public Seer getSeer() {
+    public SEER getSeer() {
         return SEER;
     }
 
     public SpaceGreenhouse getSpaceGreenhouse() {
-        return SpaceGreenhouse;
+        return spaceGreenhouse;
     }
 
     public SpaceGreenhouseWarehouse getSpaceGreenhouseWarehouse() {

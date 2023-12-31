@@ -3,7 +3,8 @@ package SpaceGreenhouse.common;
 import SpaceGreenhouse.common.product.AbstractCrops;
 import SpaceGreenhouse.common.product.AbstractFertilizer;
 import SpaceGreenhouse.common.product.AbstractSeed;
-import SpaceGreenhouse.pattern.adapter.conc.SEERAdapter;
+import SpaceGreenhouse.pattern.adapter.conc.SeerAdapter;
+import SpaceGreenhouse.pattern.adapter.conc.SeerAdapter;
 
 /**
  * 商店类
@@ -12,7 +13,7 @@ import SpaceGreenhouse.pattern.adapter.conc.SEERAdapter;
  */
 public class Shop {
 
-    private SEERAdapter SEER=SEERAdapter.getInstance();
+    private SeerAdapter SEER=SeerAdapter.getInstance();
 
     private SpaceGreenhouseWarehouse SpaceGreenhouseWarehouse= SEER.getSpaceGreenhouseWarehouse();
 
