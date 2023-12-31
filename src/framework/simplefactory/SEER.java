@@ -4,7 +4,7 @@ import backpack.MVC.Backpack;
 import framework.simplefactory.color.Color;
 import framework.simplefactory.role.Role;
 
-// 外部调用者:SEERfarm
+// 外部调用者:SpaceGreenhouse
 //赛尔的角色相关信息
 public class SEER {
     private String SEERName;      //名字

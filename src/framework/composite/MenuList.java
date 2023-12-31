@@ -23,10 +23,10 @@ public class MenuList {
          * 大厅菜单
          */
         Menu amuseMenu = new Menu("有趣の游乐园");
-        Menu farmMenu = new Menu("空间培育站");
+        Menu SpaceGreenhouseMenu = new Menu("空间培育站");
         Menu shopMenu = new Menu("太空站商场");
         Menu chatMenu = new Menu("聊天室");
-        meanMenu.add(amuseMenu, farmMenu, shopMenu, chatMenu, new MenuOption("查看公告"),new MenuOption("查看基本信息"));
+        meanMenu.add(amuseMenu, SpaceGreenhouseMenu, shopMenu, chatMenu, new MenuOption("查看公告"),new MenuOption("查看基本信息"));
         /**
          * 聊天室菜单
          */

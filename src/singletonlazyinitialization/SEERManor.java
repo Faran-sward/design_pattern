@@ -103,8 +103,8 @@ public class SEERManor {
                     break;
                 case 2:
                     System.out.println("欢迎来到空间培育站！\n");
-                    //FarmProcess farmProcess = FarmProcess.newInstance();
-                    //farmProcess.process();
+                    //SpaceGreenhouseProcess SpaceGreenhouseProcess = SpaceGreenhouseProcess.newInstance();
+                    //SpaceGreenhouseProcess.process();
                     break;
                 case 3:
                     System.out.println("欢迎来到太空站商场！\n");
