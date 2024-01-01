@@ -122,7 +122,7 @@ public class SEERManor {
                     break;
                 case 6:
                     System.out.println("\n正在显示赛尔的基本信息！");
-                    putInformation.showMoleInformation(player,controller);;
+                    putInformation.showSEERInformation(player,controller);;
                     break;
                 case 0:
                     goback();

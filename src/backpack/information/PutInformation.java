@@ -3,7 +3,7 @@ package backpack.information;
 import backpack.MVC.BackpackController;
 import framework.simplefactory.SEER;
 public class PutInformation {
-    public void showMoleInformation(SEER seer,BackpackController controller){
+    public void showSEERInformation(SEER seer,BackpackController controller){
         System.out.println("\n赛尔基础属性：");
         System.out.println("赛尔昵称："+seer.getSEERName());
         System.out.println("当前角色："+seer.getSEERRole().getRole());
