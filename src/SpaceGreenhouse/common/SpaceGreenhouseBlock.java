@@ -1,6 +1,6 @@
 package SpaceGreenhouse.common;
 
-import SpaceGreenhouse.common.SpaceGreenhouse.ISpaceGreenhouseBlock;
+import SpaceGreenhouse.common.Greenhouse.ISpaceGreenhouseBlock;
 import SpaceGreenhouse.common.product.AbstractCrops;
 import SpaceGreenhouse.common.product.AbstractSeed;
 import SpaceGreenhouse.common.status.SpaceGreenhouseBlockStatus;
