@@ -1,5 +1,6 @@
 package singletonlazyinitialization;
 
+import SpaceGreenhouse.SpaceGreenhouseProcess;
 import backpack.MVC.BackpackController;
 import backpack.MVC.BackpackView;
 import backpack.information.PutInformation;
@@ -11,6 +12,7 @@ import framework.composite.MenuList;
 import framework.simplefactory.SEER;
 import framework.simplefactory.SEERCreator;
 import framework.simplefactory.SEERFactory;
+import seerGame.GameUI;
 
 import java.util.Scanner;
 
@@ -97,17 +99,17 @@ public class SEERManor {
 
             switch(i){
                 case 1:
-                    System.out.println("\n正在进入有趣の游乐园！");
-                    //GameUI gamemaker = new GameUI();
-                    //gamemaker.playGame();
+                    System.out.println("\n正在进入元旦活动！");
+                    GameUI gamemaker = new GameUI();
+                    gamemaker.playGame();
                     break;
                 case 2:
                     System.out.println("欢迎来到空间培育站！\n");
-                    //SpaceGreenhouseProcess SpaceGreenhouseProcess = SpaceGreenhouseProcess.newInstance();
-                    //SpaceGreenhouseProcess.process();
+                    SpaceGreenhouseProcess spaceGreenhouseProcess = SpaceGreenhouseProcess.newInstance();
+                    spaceGreenhouseProcess.process();
                     break;
                 case 3:
-                    System.out.println("欢迎来到太空站商场！\n");
+                    System.out.println("欢迎来到太空站商场！(功能暂未开放)\n");
                     //MallProcess mallProcess=MallProcess.newInstance();
                     //mallProcess.process();
                     break;

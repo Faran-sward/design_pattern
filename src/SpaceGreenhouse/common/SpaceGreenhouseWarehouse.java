@@ -1,7 +1,5 @@
 package SpaceGreenhouse.common;
 
-import SpaceGreenhouse.common.Greenhouse.ISpaceGreenhouse;
-import framework.simplefactory.SEER;
 import SpaceGreenhouse.common.product.AbstractCrops;
 import SpaceGreenhouse.common.product.AbstractFertilizer;
 import SpaceGreenhouse.common.product.AbstractSeed;
@@ -12,10 +10,11 @@ import SpaceGreenhouse.common.product.fertilizer.MiddleFertilizer;
 import SpaceGreenhouse.common.product.fertilizer.PrimaryFertilizer;
 import SpaceGreenhouse.common.product.seed.*;
 import SpaceGreenhouse.common.product.tool.*;
-import SpaceGreenhouse.common.repository.*;
+import SpaceGreenhouse.common.repository.ISpaceGreenhouseWareHouse;
 import SpaceGreenhouse.pattern.adapter.conc.SeerAdapter;
 import SpaceGreenhouse.pattern.chainOfResponsibility.conc.ShopHandler;
 import SpaceGreenhouse.pattern.chainOfResponsibility.conc.WareHouseHandler;
+import framework.simplefactory.SEER;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -27,7 +26,7 @@ import java.util.Map;
  * 赛尔个人仓库
  * implements ISpaceGreenhouseWareHouse
  */
-public class SpaceGreenhouseWarehouse implements ISpaceGreenhouse {
+public class SpaceGreenhouseWarehouse implements ISpaceGreenhouseWareHouse {
 
     private SEER SEER;
 

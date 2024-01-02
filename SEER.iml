@@ -10,7 +10,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/fastjson-2.0.44.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/fastjson-1.2.75.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

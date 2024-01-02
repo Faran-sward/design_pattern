@@ -22,7 +22,7 @@ public class MenuList {
         /**
          * 大厅菜单
          */
-        Menu amuseMenu = new Menu("有趣の游乐园");
+        Menu amuseMenu = new Menu("元旦活动");
         Menu SpaceGreenhouseMenu = new Menu("空间培育站");
         Menu shopMenu = new Menu("太空站商场");
         Menu chatMenu = new Menu("聊天室");
@@ -35,9 +35,9 @@ public class MenuList {
         /**
          * 游乐园菜单
          */
-        Menu raceMenu = new Menu("赛车场");
-        amuseMenu.add(new MenuOption("厨神争霸"), raceMenu, new MenuOption("棋高一招"), new MenuOption("行程信息"),new MenuOption("购买门票"));
-        raceMenu.add(new MenuOption("鬼火竞速赛"), new MenuOption("机车漂移赛"), new MenuOption("空间站障碍赛"));
+        Menu raceMenu = new Menu("泰坦矿洞");
+        amuseMenu.add(new MenuOption("材料合成"), raceMenu, new MenuOption("行程信息"),new MenuOption("购买门票"));
+        raceMenu.add(new MenuOption("最速挖掘"), new MenuOption("深度挖掘"), new MenuOption("复杂地形挑战"));
 
         /**
          * 农场菜单

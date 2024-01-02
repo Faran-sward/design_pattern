@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * 定义仓库的行为
  */
-interface ISpaceGreenhouseWareHouse {
+public interface ISpaceGreenhouseWareHouse {
     /**
      * 从商店买种子
      *
