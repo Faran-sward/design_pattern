@@ -2,7 +2,7 @@ package SpaceGreenhouse.test.adapter;
 
 import framework.simplefactory.SEER;
 import SpaceGreenhouse.common.SpaceGreenhouseBlock;
-import SpaceGreenhouse.pattern.adapter.conc.SEERAdapter;
+import SpaceGreenhouse.pattern.adapter.conc.SeerAdapter;
 import SpaceGreenhouse.pattern.adapter.conc.WeatherAdapter;
 
 public class AdapterTest {
@@ -25,12 +25,12 @@ public class AdapterTest {
         weatherAdapter.watering(SpaceGreenhouseBlock);
     }
     public static void SEERAdapterTest(){
-        SEERAdapter SEERAdapter = SEERAdapter.getInstance();
-        System.out.println("现存赛尔豆："+SEERAdapter.getSEER());
-        SEERAdapter.getSEERDou();
+        SeerAdapter SEERAdapter = SeerAdapter.getInstance();
+        System.out.println("现存赛尔豆："+SEERAdapter.getSeer());
+        SEERAdapter.getSeerDou();
         SEERAdapter.getSpaceGreenhouseWarehouse();
         SEERAdapter.getSpaceGreenhouse();
-        SEERAdapter.setSEERDou(1000.0);
+        SEERAdapter.setSeerDou(1000.0);
         System.out.println("成功设置赛尔豆为：1000.0");
     }
     public static void main(String[] args) {

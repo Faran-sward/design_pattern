@@ -8,7 +8,7 @@ import SpaceGreenhouse.common.exception.product.conc.SeedNotFoundException;
 import SpaceGreenhouse.common.product.AbstractSeed;
 import SpaceGreenhouse.common.product.IProduct;
 import SpaceGreenhouse.pattern.adapter.conc.WeatherAdapter;
-import SpaceGreenhouse.pattern.adapter.conc.SEERAdapter;
+import SpaceGreenhouse.pattern.adapter.conc.SeerAdapter;
 import SpaceGreenhouse.pattern.builder.Director;
 import SpaceGreenhouse.pattern.builder.conc.ConcreteBuilder1;
 import SpaceGreenhouse.pattern.builder.conc.ConcreteBuilder2;
@@ -29,7 +29,7 @@ import java.util.Scanner;
  */
 public class SpaceGreenhouseProcess {
     //赛尔角色
-    private SEERAdapter SEER=SEERAdapter.getInstance();
+    private SeerAdapter SEER=SeerAdapter.getInstance();
     //太空温室
     private SpaceGreenhouse SpaceGreenhouse = SEER.getSpaceGreenhouse();
     //仓库
@@ -209,7 +209,7 @@ public class SpaceGreenhouseProcess {
                 objClassName=Home.seedMap.get(objName);
             }
             IProduct obj = factory.create(objClassName);
-            System.out.println("请输入想要购买的" + name + "数目(您现在有" + SEER.getSEERDou() + "赛尔豆):");
+            System.out.println("请输入想要购买的" + name + "数目(您现在有" + SEER.getSeerDou() + "赛尔豆):");
             int objNum;
             String str = input.next();
             if (str.matches("[0-9]+")) {
@@ -224,7 +224,7 @@ public class SpaceGreenhouseProcess {
                 if (proxy.seedPurchase(objName, objNum)) {
                     System.out.println("正在向商店购买" + obj.getName() +
                             "，共消费" + price + "赛尔豆，" +
-                            "剩余" + SEER.getSEERDou() + "赛尔豆\n");
+                            "剩余" + SEER.getSeerDou() + "赛尔豆\n");
                 } else {
                     System.out.println("购买失败！");
                 }
@@ -232,7 +232,7 @@ public class SpaceGreenhouseProcess {
                 if (proxy.fertilizerPurchase(objName, objNum)) {
                     System.out.println("正在向商店购买" + obj.getName() +
                             "，共消费" + price + "赛尔豆，" +
-                            "剩余" + SEER.getSEERDou() + "赛尔豆\n");
+                            "剩余" + SEER.getSeerDou() + "赛尔豆\n");
                 } else {
                     System.out.println("购买失败！");
                 }

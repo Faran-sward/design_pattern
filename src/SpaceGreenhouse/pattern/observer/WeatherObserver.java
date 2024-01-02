@@ -13,7 +13,7 @@ import java.util.Set;
  */
 public class WeatherObserver {
 
-    private SEERAdapter SEER=SEERAdapter.getInstance();
+    private SeerAdapter SEER=SeerAdapter.getInstance();
 
     private SpaceGreenhouse SpaceGreenhouse = SEER.getSpaceGreenhouse();
 
