@@ -1,4 +1,4 @@
-package moleSpaceGreenhouse.pattern.command;
+package SpaceGreenhouse.pattern.command;
 
 /**
  * 抽象命令

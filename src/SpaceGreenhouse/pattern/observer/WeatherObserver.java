@@ -2,7 +2,7 @@ package SpaceGreenhouse.pattern.observer;
 
 import SpaceGreenhouse.common.SpaceGreenhouse;
 import SpaceGreenhouse.common.status.SpaceGreenhouseBlockStatus;
-import SpaceGreenhouse.pattern.adapter.conc.SEERAdapter;
+import SpaceGreenhouse.pattern.adapter.conc.SeerAdapter;
 import SpaceGreenhouse.pattern.adapter.conc.WeatherAdapter;
 import SpaceGreenhouse.pattern.iterator.conc.SpaceGreenhouseIterator;
 

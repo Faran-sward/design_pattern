@@ -14,8 +14,8 @@ public class ProxyTest {
         ((FertilizerCommand) fertilizerCommand).setSpaceGreenhouseWarehouse(warehouse);
         proxy.setFertilizerCommand((FertilizerCommand)fertilizerCommand);
         System.out.println("----调用代理模式ing----");
-        System.out.println("正在向商店购买10份中级燃料");
-        boolean result = proxy.fertilizerPurchase("中级燃料", 10);
+        System.out.println("正在向商店购买10份中级肥料");
+        boolean result = proxy.fertilizerPurchase("中级肥料", 10);
         System.out.println(result==false?"抱歉，赛尔豆余额不足，购买失败":"恭喜，购买成功！");
         //proxy.seedPurchase("草莓种子",-1);
     }
