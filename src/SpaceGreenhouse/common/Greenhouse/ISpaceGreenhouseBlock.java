@@ -1,4 +1,4 @@
-package SpaceGreenhouse.common.SpaceGreenhouse;
+package SpaceGreenhouse.common.Greenhouse;
 
 import SpaceGreenhouse.common.product.AbstractCrops;
 import SpaceGreenhouse.common.product.AbstractSeed;
